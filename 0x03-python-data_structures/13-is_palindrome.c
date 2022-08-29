@@ -1,53 +1,72 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * is_palindrome - linked list palindrome
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
  *
- * @head: pointer to head of linkedlist
- *
- * Return: 1 on success, 0 on fail
+ * Return: pointer to the first node in the new list
  */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ *
+ * Return: 1 if it is, 0 if not
+ */
 int is_palindrome(listint_t **head)
 {
-	listint_t *new, *move;
-	int *p;
-	unsigned int i = 0, j = 0, k = 0, l = 0;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-	new = *head;
-	move = *head;
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 
-	while (new)
+	while (1)
 	{
-		new = new->next;
-		i++;
-	}
-	p = malloc(sizeof(int) * i);
-	if (p == NULL)
-		return (0);
-
-	while (move)
-	{
-		*(p + j) = move->n;
-		move =  move->next;
-		j++;
-	}
-
-	l = i - 1;
-
-	while (k < l)
-	{
-		if (*(p + k) != *(p + l))
+		fast = fast->next->next;
+		if (!fast)
 		{
-			free(p);
-			return (0);
+			dup = slow->next;
+			break;
 		}
-		k++;
-		l--;
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
 
-	free(p);
-	return (1);
+	reverse_listint(&dup);
+
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
+	return (0);
 }
