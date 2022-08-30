@@ -1,4 +1,4 @@
-#This repo contains alx-higher_level_programming tasks
+# This repo contains alx-higher_level_programming tasks
 
 Thsis repository contains programs written for the alx-higher_level_programming and algorithm track at alx-school. It includes programs writted in Python and data structures writted in C. A curated lists of projects I have completed so far are as follows:
 
