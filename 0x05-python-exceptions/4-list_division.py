@@ -13,7 +13,7 @@ def list_division(my_list_1, my_list_2, list_length):
             value = 0
             print("wrong type")
         finally:
-             new_list.append(value)
+            new_list.append(value)
     if len(my_list_1) != len(my_list_2):
         print("out of range")
         ranged = abs(len(my_list_1) - len(my_list_2))
