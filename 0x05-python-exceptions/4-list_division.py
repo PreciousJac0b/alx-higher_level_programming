@@ -19,4 +19,7 @@ def list_division(my_list_1, my_list_2, list_length):
         ranged = abs(len(my_list_1) - len(my_list_2))
         for i in range(ranged):
             new_list.append(0)
+    if list_length > len(new_list):
+        for i in range(list_length - len(new_list):
+                new_list.append(0)
     return new_list
