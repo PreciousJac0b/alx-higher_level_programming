@@ -9,6 +9,6 @@ def safe_print_list(my_list=[], x=0):
             count += 1
         print("")
     except IndexError:
-        raise Exception('x greater than length: {}'.format(x))
+        break
     finally:
         return count
