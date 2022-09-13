@@ -2,6 +2,7 @@
 
 """Defines a Square Class"""
 
+
 class Square:
     """Represents a class"""
     def __init__(self, size=0, position=(0, 0)):
@@ -28,10 +29,10 @@ class Square:
     @position.setter
     def position(self, position):
         if (type(position) != tuple or
-        len(position) != 2 or
-        type(position[0]) != int or
-        type(position[1]) != int or
-        not all(num >= 0 for num in position)):
+                len(position) != 2 or
+                type(position[0]) != int or
+                type(position[1]) != int or
+                not all(num >= 0 for num in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
@@ -41,13 +42,13 @@ class Square:
 
     def my_print(self):
         if self.__size == 0:
-            print()
-        else:
-            for i in range(self.__position[1]):
-                    print("")
-            for i in range(self.__size):
-                for k in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print()
+            print("")
+
+        for i in range(self.__position[1]):
+            print("")
+        for i in range(self.__size):
+            for k in range(self.__position[0]):
+                print(" ", end="")
+            for j in range(self.__size):
+                print("#", end="")
+            print("")
