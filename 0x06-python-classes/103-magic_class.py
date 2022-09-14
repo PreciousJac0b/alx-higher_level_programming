@@ -2,6 +2,8 @@
 
 """Defines a Magic Circle Class"""
 
+import math
+
 
 class MagicClass:
     def __init__(self, radius=0):
