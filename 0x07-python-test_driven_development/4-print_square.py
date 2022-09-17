@@ -7,6 +7,16 @@ with the string '#'
 
 
 def print_square(size):
+    """
+    Prints a square with the # string
+
+    Args:
+        size (int): length and breadth of square
+
+    Raises:
+        TypeError: if size is not an integer
+        ValueError: if size less than zero
+    """
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:
