@@ -65,7 +65,7 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         """
         Compares the area of two instances of the rectangle class
-        
+
         Args:
             rect_1: first rectangle
             rect_2: second rectangle
