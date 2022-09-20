@@ -3,7 +3,7 @@
 * classmethods
 * staticmethods
 * global class variables
-* Data Abstraction, Encapsulation and Polymorphism(polymorphism)
+* Data Abstraction, Encapsulation and Polymorphism(Information Hiding)
 * __str__ and __repr__
 * __init__
 * Attributes - fields, methods
