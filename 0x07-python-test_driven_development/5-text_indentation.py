@@ -24,6 +24,6 @@ def text_indentation(text):
     for elem in text:
         if elem in codex:
             print("{}".format(elem))
-            print()
+            print(\n)
         else:
             print("{}".format(elem), end="")
