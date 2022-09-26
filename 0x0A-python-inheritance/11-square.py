@@ -17,4 +17,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """Prints the rectangle class"""
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
