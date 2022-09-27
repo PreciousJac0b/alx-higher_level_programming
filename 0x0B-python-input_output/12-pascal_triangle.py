@@ -15,7 +15,7 @@ def pascal_triangle(n):
         new_arr = pascal[-1]
         new = [1]
         for j in range(len(new_arr) - 1):
-            new.append(new_arr[i] + new_arr[i+1])
+            new.append(new_arr[j] + new_arr[j+1])
         new.append(1)
         pascal.append(new)
     return pascal
