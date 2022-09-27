@@ -10,7 +10,7 @@ def append_after(filename="", search_string="", new_string=""):
     Appends new_string to the end of a line if it does contain it
     """
     r_string = ""
-    with open(filename, 'r',encoding="utf-8") as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         for line in f:
             r_string += line
             if search_string in line:
