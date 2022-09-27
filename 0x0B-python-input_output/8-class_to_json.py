@@ -5,9 +5,7 @@ Returns the dictionary description of a simple
 data structure
 """
 
-import json
-
 
 def class_to_json(obj):
-    """Converts class object to json"""
-    return json.dumps(obj.__dict__)
+    """Returns dictionary description of a data structure"""
+    return obj.__dict__
