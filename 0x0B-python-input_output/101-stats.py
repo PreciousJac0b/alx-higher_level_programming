@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+Reads lines from stdin and prints status codes
+and number of times status code occured after every 10 lines
+"""
 
 if __name__ == '__main__':
     import fileinput
