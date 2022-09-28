@@ -5,6 +5,7 @@ if __name__ == '__main__':
     import fileinput
 
     def print_dict(status, size):
+        """Prints a dictionary in sorted order"""
         print("File size: {}".format(size))
         status = dict(sorted(status.items()))
         for elem in status:
