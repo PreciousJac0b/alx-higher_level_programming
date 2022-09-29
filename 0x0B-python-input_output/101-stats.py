@@ -21,6 +21,8 @@ if __name__ == '__main__':
         if i % 10 == 0 and i != 0:
             print_dict(status_code, file_size)
         line = line.split()
+        if len(line) < 2:
+            continue
         code = line[-2]
         size = line[-1]
         if not code:
