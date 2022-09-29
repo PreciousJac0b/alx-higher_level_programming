@@ -23,8 +23,11 @@ if __name__ == '__main__':
         line = line.split()
         if len(line) < 2:
             continue
-        code = line[-2]
-        size = line[-1]
+        try:
+            code = line[-2]
+            size = line[-1]
+        except IndexError:
+            pass
         if not code:
             continue
         if int(code) not in new_list:
