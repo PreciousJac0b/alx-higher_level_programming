@@ -30,32 +30,56 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Field width getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Field width setter with input validations"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
     def height(self):
+        """Field height getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Field height setter with input validation"""
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
     def x(self):
+        """Field x getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Field x setter with input validations"""
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
+        """Field y getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Field y setter with input validations"""
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
