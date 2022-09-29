@@ -16,6 +16,7 @@ if __name__ == '__main__':
     i = 0
     file_size = 0
     status_code = {}
+    new_list = [200, 301, 400, 401, 403, 404, 405, 500]
     for line in fileinput.input():
         if i % 10 == 0 and i != 0:
             print_dict(status_code, file_size)
@@ -23,6 +24,8 @@ if __name__ == '__main__':
         code = line[-2]
         size = line[-1]
         if not code:
+            continue
+        if int(code) not in new_list:
             continue
         if code not in status_code:
             status_code[code] = 1
