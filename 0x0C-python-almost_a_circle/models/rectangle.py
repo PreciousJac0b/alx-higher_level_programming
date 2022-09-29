@@ -90,3 +90,22 @@ class Rectangle(Base):
         rectangle class instance
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        Displays the rectangle using the char '#' in stdout
+        """
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end="")
+            print()
+
+    def __str__(self):
+        """
+        Prints the rectangle to stdout
+        Gets called when the print statement is used 
+        on an instance of the class
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
