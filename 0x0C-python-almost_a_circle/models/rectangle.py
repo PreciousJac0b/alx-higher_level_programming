@@ -146,3 +146,16 @@ class Rectangle(Base):
                 elif k == 'y':
                     self.y = v
 
+    def to_dictionary(self):
+        """
+            Returns a dictionary representation
+            of the Rectangle attributes
+        """
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
+
