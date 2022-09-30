@@ -114,12 +114,12 @@ class Rectangle(Base):
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the attributes of the class instance
         """
         i = 0
-        try:
+        if args and len(args) != 0:
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[0]
@@ -131,5 +131,18 @@ class Rectangle(Base):
                     self.x = args[3]
                 elif i == 4:
                     self.y = args[4]
-        except IndexError:
-            pass
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == 'id':
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    self.id = v
+                elif k == 'width':
+                    self.width  = v
+                elif k == 'height':
+                    self.height = v
+                elif k == 'x':
+                    self.x = v
+                elif k == 'y':
+                    self.y = v
+
