@@ -22,7 +22,7 @@ class Base:
         Args:
             id: The identity of the new instance
         """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -30,7 +30,33 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Converts object to json string"""
         if not list_dictionaries:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Writes json object of list_objs to class name.js0n
+        """
+        filename = "{}.json".format(cls.__name__)
+        new_list = []
+        with open(filename, 'w', encoding='utf-8') as f:
+            if not list_objs:
+                json.dump([], f)
+            else:
+                for elem in list_objs:
+                    new_list.append(elem.to_dictionary())
+                f.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list representation of
+        json_string object
+        """
+        if not json_string:
+            return []
+        return json.loads(json_string)
