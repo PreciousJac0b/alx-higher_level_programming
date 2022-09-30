@@ -113,3 +113,23 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        Updates the attributes of the class instance
+        """
+        i = 0
+        try:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                elif i == 1:
+                    self.width = args[1]
+                elif i == 2:
+                    self.height = args[2]
+                elif i == 3:
+                    self.x = args[3]
+                elif i == 4:
+                    self.y = args[4]
+        except IndexError:
+            pass
