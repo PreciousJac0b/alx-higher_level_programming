@@ -4,6 +4,7 @@ Represents a base class
 """
 
 import json
+import os
 
 
 class Base:
@@ -63,7 +64,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy_instance = cls(1, 2, 3, 4, 5)
+        dummy_instance = cls(1, 2, 3, 4)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
