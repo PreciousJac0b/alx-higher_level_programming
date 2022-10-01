@@ -5,6 +5,7 @@ Represents a base class
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -46,7 +47,7 @@ class Base:
         new_list = []
         with open(filename, 'w', encoding='utf-8') as f:
             if not list_objs:
-                json.dump([], f)
+                f.write(cls.to_json_string(new_list))
             else:
                 for elem in list_objs:
                     new_list.append(elem.to_dictionary())
@@ -64,6 +65,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Creates instances fr0m dictionary"""
         dummy_instance = cls(1, 2, 3, 4)
         dummy_instance.update(**dictionary)
         return dummy_instance
@@ -84,3 +86,65 @@ class Base:
         for elem in parsed:
             load_list.append(cls.create(**elem))
         return load_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves json string to csv files"""
+        filename = "{}.csv".format(cls.__name__)
+        new_list = []
+        for elem in list_objs:
+            new_list.append(elem.to_dictionary())
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(cls.to_json_string(new_list))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Class method to load instance fr0m json file
+        """
+        filename = '{}.csv'.format(cls.__name__)
+        if not os.path.exists(filename):
+            return []
+        with open(filename, 'r', encoding='utf-8') as f:
+            content = f.read()
+        parsed = cls.from_json_string(content)
+
+        load_list = []
+        for elem in parsed:
+            load_list.append(cls.create(**elem))
+        return load_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        myturt = turtle.Turtle()
+        myturt.screen.bgcolor(orange)
+        myturt.pensize(3)
+        myturt.shape("classic")
+        myturt.color("black")
+
+        for elem in list_rectangles:
+            myturt.showturtle()
+            myturt.up()
+            myturt.goto(elem.x, elem.y)
+            myturt.down()
+            for i in range(2):
+                myturt.forward(elem.width)
+                myturt.left(90)
+                myturt.forward(elem.height)
+                myturt.left(90)
+            myturt.hideturtle()
+
+        myturt.color("green")
+        for elem in list_squares:
+            myturt.showturtle()
+            myturt.up()
+            myturt.goto(elem.x, elem.y)
+            myturt.down()
+            for i in range(2):
+                myturt.forward(elem.size)
+                myturt.left(90)
+                myturt.forward(elem.size)
+                myturt.left(90)
+            myturt.hideturtle()
+
+        turtle.exitonclick()
