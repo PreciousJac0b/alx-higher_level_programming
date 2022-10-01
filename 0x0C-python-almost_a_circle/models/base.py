@@ -60,3 +60,9 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy_instance = cls(1, 2, 3, 4, 5)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
