@@ -67,3 +67,21 @@ class TestBaseClass(unittest.TestCase):
     def test_frozenset_id(self):
         freeze_set = frozenset({1, 2, 3})
         self.assertEqual(freeze_set, Base(freeze_set).id)
+
+    def test_nan_id(self):
+        self.assertNotEqual(float('nan'), Base(float('nan')).id)
+
+    def test_inf_id(self):
+        self.assertEqual(float('inf'), Base(float('inf')).id)
+
+    def test_two_args(self):
+        with self.assertRaises(TypeError):
+            Base(1, 2)
+
+    def test_outnumbered_args(self):
+        with self.assertRaises(TypeError):
+            Base(1, 2, 3, 4, 5)
+
+    def test_nb_instances_private(self):
+        with self.assertRaises(AttributeError):
+            Base(2).__nb_instances
