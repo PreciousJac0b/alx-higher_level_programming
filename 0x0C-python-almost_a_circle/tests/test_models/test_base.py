@@ -5,7 +5,7 @@ from models.rectangle import Rectangle
 """Defines unittests for base.py
 """
 
-class TestBaseClass(unittest.TestCase):
+class TestBaseClass_id(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
     def test_four_base(self):
         b1 = Base()
@@ -91,3 +91,10 @@ class TestBaseClass(unittest.TestCase):
 
     def test_bytearray_id(self):
         self.assertEqual(bytearray(b'gege'), Base(bytearray(b'gege')).id)
+
+
+class TestBase_to_json_string(unittest.TestCase):
+    """Unittest for testing the to_json string of the Base class"""
+    def test_type(self):
+        r1 = Rectangle(1, 3, 4, 3, 5)
+        self.assertEqual(str, type(Base.to_json_string([r1.to_dictionary()])))
