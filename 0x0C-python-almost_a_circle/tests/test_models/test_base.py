@@ -85,3 +85,9 @@ class TestBaseClass(unittest.TestCase):
     def test_nb_instances_private(self):
         with self.assertRaises(AttributeError):
             Base(2).__nb_instances
+
+    def test_bytecode_id(self):
+        self.assertEqual(b'Python', Base(b'Python').id)
+
+    def test_bytearray_id(self):
+        self.assertEqual(bytearray(b'gege'), Base(bytearray(b'gege')).id)
