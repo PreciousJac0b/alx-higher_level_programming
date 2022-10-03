@@ -2,7 +2,7 @@
 
 """
 Represents a Square class
-that inherits fr0m the 
+that inherits fr0m the
 Rectangle class
 """
 
@@ -20,7 +20,8 @@ class Square(Rectangle):
     def __str__(self):
         """Displays the square class"""
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                            self.id, self.x, self.y, self.width)
+                                             self.id, self.x, self.y,
+                                             self.width)
 
     @property
     def size(self):
@@ -60,11 +61,12 @@ class Square(Rectangle):
                     self.x = v
                 elif k == 'y':
                     self.y = v
-    def to_dictionary(self):
-        """
-        Returns dictionary representation of
-        the class instance
-        """
+
+        def to_dictionary(self):
+            """
+            Returns dictionary representation of
+            the class instance
+            """
         return {
                 'id': self.id,
                 'size': self.size,
