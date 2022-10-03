@@ -86,7 +86,7 @@ class Rectangle(Base):
 
     def area(self):
         """
-        Computes and returns the area of the 
+        Computes and returns the area of the
         rectangle class instance
         """
         return self.__width * self.__height
@@ -107,7 +107,7 @@ class Rectangle(Base):
     def __str__(self):
         """
         Prints the rectangle to stdout
-        Gets called when the print statement is used 
+        Gets called when the print statement is used
         on an instance of the class
         """
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
@@ -138,7 +138,7 @@ class Rectangle(Base):
                         self.__init__(self.width, self.height, self.x, self.y)
                     self.id = v
                 elif k == 'width':
-                    self.width  = v
+                    self.width = v
                 elif k == 'height':
                     self.height = v
                 elif k == 'x':
@@ -158,4 +158,3 @@ class Rectangle(Base):
                 'x': self.x,
                 'y': self.y
                 }
-
