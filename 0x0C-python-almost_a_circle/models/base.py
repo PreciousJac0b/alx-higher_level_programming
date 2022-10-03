@@ -92,8 +92,11 @@ class Base:
         """Saves json string to csv files"""
         filename = "{}.csv".format(cls.__name__)
         new_list = []
-        for elem in list_objs:
-            new_list.append(elem.to_dictionary())
+        if not list_objs:
+            new_list = []
+        else:
+            for elem in list_objs:
+                new_list.append(elem.to_dictionary())
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(new_list))
 
