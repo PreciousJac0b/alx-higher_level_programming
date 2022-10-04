@@ -66,7 +66,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Creates instances fr0m dictionary"""
-        dummy_instance = cls(1, 2)
+        if cls.__name__ == 'Rectangle':
+            dummy_instance = cls(1, 2)
+        else:
+            dummy_instance = cls(1)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
