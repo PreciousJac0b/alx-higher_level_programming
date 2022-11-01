@@ -1,0 +1,3 @@
+-- Shows full description of the table first-table from the db hbtn_0c_0
+
+SHOW CREATE TABLE first_table;
