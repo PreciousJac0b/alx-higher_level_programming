@@ -1,3 +1,3 @@
-/* Lists all databases of your MYSQL server */
+-- Lists all databases of your MYSQL server
 
-SHOW DATABASES
+SHOW DATABASES;
