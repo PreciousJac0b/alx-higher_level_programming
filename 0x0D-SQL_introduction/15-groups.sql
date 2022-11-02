@@ -1,3 +1,3 @@
 -- groups
 
-SELECT score, count(*) AS NUMBER FROM second_table GROUP BY score ORDER BY NUMBER DESC;
+SELECT score, count(*) AS number FROM second_table GROUP BY score ORDER BY NUMBER DESC;
