@@ -3,9 +3,9 @@
 const args = process.argv;
 
 function add (a, b) {
-  console.log(a + b);
+  return a + b;
 }
 if (args.length < 3) {
   console.log('NaN');
 }
-add(Math.floor(Number(args[2])), Math.floor(Number(args[3])));
+console.log(add(Math.floor(Number(args[2])), Math.floor(Number(args[3]))));
