@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states \
-            WHERE name LIKE 'N%' OR 'n%'\
+            WHERE name LIKE 'N%' OR name LIKE 'n%'\
             ORDER BY states.id ASC;")
     rows = cur.fetchall()
 
