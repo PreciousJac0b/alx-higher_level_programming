@@ -1,0 +1,21 @@
+#!/usr/bin/node
+
+/* Prints out the status code of a particular request */
+
+const request = require('request');
+const apiUrl = process.argv[2];
+
+request.get(apiUrl, function (error, response, body) {
+  if (error) throw error;
+  let counter = 0;
+  let results = JSON.parse(body).results;
+  for (let elem of results) {
+    const characters = elem["characters"];
+    for (let elems of characters) {
+      if (elems.includes('/18/')) {
+        counter += 1;
+      }
+    }
+  }
+  console.log(counter);
+});
