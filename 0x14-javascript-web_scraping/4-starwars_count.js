@@ -8,10 +8,10 @@ const apiUrl = process.argv[2];
 request.get(apiUrl, function (error, response, body) {
   if (error) throw error;
   let counter = 0;
-  let results = JSON.parse(body).results;
-  for (let elem of results) {
-    const characters = elem["characters"];
-    for (let elems of characters) {
+  const results = JSON.parse(body).results;
+  for (const elem of results) {
+    const characters = elem.characters;
+    for (const elems of characters) {
       if (elems.includes('/18/')) {
         counter += 1;
       }
