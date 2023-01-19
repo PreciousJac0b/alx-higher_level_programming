@@ -27,7 +27,7 @@ if __name__ == '__main__':
             if len(line) < 2:
                 continue
             tmp = line[-2]
-            if ord(tmp[0]) not in range(48, 57):
+            if ord(tmp[0]) not in list(range(48, 57)):
                 continue
             code = line[-2]
             size = line[-1]
