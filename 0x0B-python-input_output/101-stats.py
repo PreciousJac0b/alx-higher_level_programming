@@ -26,6 +26,9 @@ if __name__ == '__main__':
             line = line.split()
             if len(line) < 2:
                 continue
+            tmp = line[-2]
+            if ord(tmp[0]) not in range(48, 57):
+                continue
             code = line[-2]
             size = line[-1]
             if not code:
