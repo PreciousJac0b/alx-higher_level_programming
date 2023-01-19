@@ -28,7 +28,7 @@ if __name__ == '__main__':
                 continue
             code = line[-2]
             size = line[-1]
-            if type(code) != int:
+            if not code:
                 continue
             if int(code) not in new_list:
                 continue
