@@ -42,6 +42,6 @@ if __name__ == '__main__':
             file_size += int(size)
             i += 1
         print_dict(status_code, file_size)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, IndexError):
         print_dict(status_code, file_size)
         sys.exit(1)
