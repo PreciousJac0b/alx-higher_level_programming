@@ -28,7 +28,7 @@ if __name__ == '__main__':
                 continue
             tmp = line[-2]
             if ord(tmp[0]) not in list(range(48, 57)):
-                sys.stderr.write("Invalid Input")
+                sys.stderr.write("")
                 continue
             code = line[-2]
             size = line[-1]
